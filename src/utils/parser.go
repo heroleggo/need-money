@@ -1,5 +1,7 @@
 package utils
 
+import "strings"
+
 func Parse(str string, method string) string {
 	if method == "xml" {
 		return parseWithXml(str)
@@ -10,14 +12,15 @@ func Parse(str string, method string) string {
 	}
 }
 
-func parseWithXml(str string) string {
+func parseWithXml(data string) string {
+	splittedData := strings.Split(data, "\n")
 	return "hehe"
 }
 
-func parseWithJson(str string) string {
+func parseWithJson(data string) string {
 	return "haha"
 }
 
-func parseWithDefault(str string) string {
+func parseWithDefault(data string) string {
 	return "hihi"
 }
