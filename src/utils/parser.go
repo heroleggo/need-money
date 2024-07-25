@@ -13,7 +13,22 @@ func Parse(str string, method string) string {
 }
 
 func parseWithXml(data string) string {
-	splittedData := strings.Split(data, "\n")
+	var stack Stack
+
+	if !strings.HasPrefix(data, "<?xml") {
+		return ""
+	}
+	// remove <?xml version="1.0" encoding="UTF-8"?> from data
+	position := strings.Index(data, "?>")
+	data = data[position+2:]
+
+	// get information from data xml
+	for i := 0; i < len(data); i++ {
+		if data[i] == '<' {
+
+		}
+	}
+
 	return "hehe"
 }
 
