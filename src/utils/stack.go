@@ -19,3 +19,11 @@ func (s *Stack) pop() interface{} {
 	*s = (*s)[:top]
 	return value
 }
+
+func (s *Stack) get() interface{} {
+	if s.isEmpty() {
+		return nil
+	}
+	top := len(*s) - 1
+	return (*s)[top]
+}

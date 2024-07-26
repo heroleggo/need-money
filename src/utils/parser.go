@@ -1,6 +1,9 @@
 package utils
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 func Parse(str string, method string) string {
 	if method == "xml" {
@@ -25,7 +28,20 @@ func parseWithXml(data string) string {
 	// get information from data xml
 	for i := 0; i < len(data); i++ {
 		if data[i] == '<' {
+			if data[i+1] == '/' {
+				// get data from stack before pop
+				fmt.Println(stack.get())
 
+				// pop stack
+				stack.pop()
+			} else {
+				// push stack
+				j := i
+				for j < len(data) && data[j] != '>' {
+					j++
+				}
+				stack.push(data[i:j])
+			}
 		}
 	}
 
