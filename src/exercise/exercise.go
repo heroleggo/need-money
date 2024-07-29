@@ -26,3 +26,17 @@ func FuncWithResultValueName(a int) (result int) {
 	result = a
 	return
 }
+
+const (
+	Red   int = iota
+	Green int = iota
+	Blue  int = iota
+)
+
+func PrintColor() {
+	fmt.Println(Red)
+	fmt.Println(Green)
+	fmt.Println(Blue)
+}
+
+const typelessConst = 1
