@@ -40,3 +40,35 @@ func PrintColor() {
 }
 
 const typelessConst = 1
+
+func FuncWithForLoop() {
+	for {
+		if typelessConst == 1 {
+			fmt.Println("loop break 1")
+			break
+		}
+	}
+
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
+}
+
+func FunWithIf() {
+	if typelessConst == 1 {
+		fmt.Println("if statement")
+	} else {
+		fmt.Println("else statement")
+	}
+}
+
+func FunWithSwitch() {
+	switch typelessConst {
+	case 1:
+		fmt.Println("case 1")
+	case 2:
+		fmt.Println("case 2")
+	default:
+		fmt.Println("default case")
+	}
+}
