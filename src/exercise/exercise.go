@@ -87,3 +87,37 @@ func HandleArray() {
 		fmt.Println(arr[i])
 	}
 }
+
+type a struct {
+	aa int
+	bb string
+	cc float64
+}
+
+type b struct {
+	aa int
+	bb string
+	cc float64
+	a
+}
+
+type c struct {
+	aa   int
+	bb   string
+	cc   float64
+	data a
+}
+
+func UseStruct() {
+	a1 := a{1, "hehe", 1.1}
+	b1 := b{2, "haha", 2.2, a1}
+	c1 := c{3, "hihi", 3.3, a1}
+
+	fmt.Println("print struct b")
+	fmt.Println(b1.a.aa)
+	fmt.Println(b1.aa)
+
+	fmt.Println("print struct c")
+	fmt.Println(c1.data.aa)
+	fmt.Println(c1.aa)
+}
