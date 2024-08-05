@@ -121,3 +121,26 @@ func UseStruct() {
 	fmt.Println(c1.data.aa)
 	fmt.Println(c1.aa)
 }
+
+func UsePointer() {
+	var pointer *int
+	var data int = 10
+	pointer = &data
+
+	fmt.Println(pointer)
+	fmt.Println(*pointer)
+
+	newData := new(a)
+	newData2 := &a{}
+
+	var newDataWithData1 *a = &a{}
+	newDataWithData1.aa = 1
+	newDataWithData1.bb = "hehe"
+	newDataWithData1.cc = 1.1
+	var newDataWithData2 *a = &a{2, "hoho", 2.2}
+
+	fmt.Println(newDataWithData1)
+	fmt.Println(newDataWithData2)
+	fmt.Println(newData)
+	fmt.Println(newData2)
+}
