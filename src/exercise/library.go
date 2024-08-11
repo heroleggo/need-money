@@ -67,3 +67,8 @@ func (b *Books) ReturnBook(index int) {
 		}
 	}
 }
+
+// TODO: add library service
+func RunService() {
+
+}
