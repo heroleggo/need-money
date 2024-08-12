@@ -104,19 +104,42 @@ func RunService() {
 
 		switch command {
 		case "add":
-			var name, class string
-			var index int
-			fmt.Println("Enter name: ")
-			_, err := fmt.Scanln(&name)
-			if err != nil {
-				return
-			}
-			fmt.Println("Enter index: ")
-			_, err = fmt.Scanln(&index)
-			if err != nil {
-				return
-			}
+			// declare new book by stdin and add book to library
 
 		}
 	}
+}
+
+func ScanNewBook() (Book, bool) {
+	var name string
+	var index int
+	var class string
+
+	fmt.Println("Enter book name: ")
+	_, err := fmt.Scanln(&name)
+	if err != nil {
+		return Book{}, false
+	}
+
+	fmt.Println("Enter book index: ")
+	_, err = fmt.Scanln(&index)
+	if err != nil {
+		return Book{}, false
+	}
+
+	fmt.Println("Enter book class: ")
+	_, err = fmt.Scanln(&class)
+	if err != nil {
+		return Book{}, false
+	}
+
+	// declare new book and return
+	book := Book{
+		Name:   name,
+		Index:  index,
+		Class:  class,
+		Status: false,
+	}
+
+	return book, true
 }
