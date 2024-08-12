@@ -1,5 +1,7 @@
 package exercise
 
+import "fmt"
+
 type Book struct {
 	Name   string
 	Index  int
@@ -70,5 +72,51 @@ func (b *Books) ReturnBook(index int) {
 
 // TODO: add library service
 func RunService() {
+	defaultBooks := Books{
+		Book{
+			Name:   "책1",
+			Index:  1,
+			Class:  "경영-경제",
+			Status: false,
+		},
+		Book{
+			Name:   "책2",
+			Index:  2,
+			Class:  "인문-사회",
+			Status: false,
+		},
+		Book{
+			Name:   "책3",
+			Index:  3,
+			Class:  "자기계발",
+			Status: false,
+		},
+	}
 
+	// read command from user
+	var command string
+	for command != "exit" {
+		fmt.Println("Enter command: ")
+		_, err := fmt.Scanln(&command)
+		if err != nil {
+			return
+		}
+
+		switch command {
+		case "add":
+			var name, class string
+			var index int
+			fmt.Println("Enter name: ")
+			_, err := fmt.Scanln(&name)
+			if err != nil {
+				return
+			}
+			fmt.Println("Enter index: ")
+			_, err = fmt.Scanln(&index)
+			if err != nil {
+				return
+			}
+
+		}
+	}
 }
